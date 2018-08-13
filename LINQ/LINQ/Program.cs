@@ -19,7 +19,7 @@ namespace LINQ
 
         public static int[] GetWhereDivisableBy(List<int> numbers, int divider)
         {
-            var divisableNumbers = numbers.Where(x => x / divider == 0);
+            var divisableNumbers = numbers.Where(x => x % divider == 0);
             return divisableNumbers.ToArray();
         }
     }
