@@ -11,5 +11,9 @@ namespace LINQ
         static void Main(string[] args)
         {
         }
+        public static List<int> IncrementAll(List<int>)
+        {
+
+        }
     }
 }
