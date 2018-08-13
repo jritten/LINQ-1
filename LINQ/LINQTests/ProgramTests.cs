@@ -30,5 +30,60 @@ namespace LINQTests
             // assert
             CollectionAssert.AreEqual(expectedOutput, TestResult);
         }
+        [TestMethod]
+        public void TestAnyCapitals()
+        {
+            // arrange
+            var stringWithCaps = "Testing";
+            var stringWithoutCaps = "testing";
+            // act
+            var TestResultTrue = LINQ.Program.AnyCapitals(stringWithCaps);
+            var TestResultFalse = LINQ.Program.AnyCapitals(stringWithoutCaps);
+            // assert
+            Assert.IsTrue(TestResultTrue);
+            Assert.IsFalse(TestResultFalse);
+        }
+        [TestMethod]
+        public void TestAllCapitals()
+        {
+            // arrange
+            var stringAllCaps = "TESTING";
+            var stringNotAllCaps = "TesTiNG";
+            // act
+            var TestResultTrue = LINQ.Program.AllCapitals(stringAllCaps);
+            var TestResultsFalse = LINQ.Program.AllCapitals(stringNotAllCaps);
+            // assert
+            Assert.IsTrue(TestResultTrue);
+            Assert.IsFalse(TestResultsFalse);
+        }
+        [TestMethod]
+        public void TestNumPairs()
+        {
+            // arrange
+            var inputDictionary = new Dictionary<int, string>();
+            inputDictionary.Add(0, "hello");
+            inputDictionary.Add(1, "there");
+            var expectedCount = 2;
+            // act
+            var TestResult = LINQ.Program.NumPairs(inputDictionary);
+            // assert
+            Assert.AreEqual(TestResult, expectedCount);
+        }
+        [TestMethod]
+        public void TestNumPairsWithKeyValue()
+        {
+            // arrange
+            var inputDictionary = new Dictionary<int, string>();
+            inputDictionary.Add(0, "hello");
+            inputDictionary.Add(1, "there");
+            inputDictionary.Add(2, "yo");
+            var minKeyValue = 0;
+            var valueLength = 10;
+            var expectedCount = 2;
+            // act
+            var TestResult = LINQ.Program.NumPairsWithKeyValue(inputDictionary, minKeyValue, valueLength);
+            // assert
+            Assert.AreEqual(expectedCount, TestResult);
+        }
     }
 }
