@@ -11,9 +11,10 @@ namespace LINQ
         static void Main(string[] args)
         {
         }
-        public static List<int> IncrementAll(List<int>)
+        public static List<int> IncrementAll(List<int> numbers)
         {
-
+            var returnValue = numbers.Select(x => x + 1);
+            return returnValue.ToList();
         }
     }
 }
