@@ -34,5 +34,16 @@ namespace LINQ
             var capitalLetters = word.All(x => char.IsUpper(x));
             return capitalLetters;
         }
+
+        public static int NumPairs(Dictionary<int, string> dict)
+        {
+            var pairCount = dict.Count;
+            return pairCount;
+        }
+        public static int NumPairsWithKeyValue(Dictionary<int, string> dict, int x, int y)
+        {
+            var pairCount = dict.Where(el => el.Key > x && el.Value.Length < y).Count();
+            return pairCount;
+        } 
     }
 }
