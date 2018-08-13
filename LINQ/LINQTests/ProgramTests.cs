@@ -56,5 +56,34 @@ namespace LINQTests
             Assert.IsTrue(TestResultTrue);
             Assert.IsFalse(TestResultsFalse);
         }
+        [TestMethod]
+        public void TestNumPairs()
+        {
+            // arrange
+            var inputDictionary = new Dictionary<int, string>();
+            inputDictionary.Add(0, "hello");
+            inputDictionary.Add(1, "there");
+            var expectedCount = 2;
+            // act
+            var TestResult = LINQ.Program.NumPairs(inputDictionary);
+            // assert
+            Assert.AreEqual(TestResult, expectedCount);
+        }
+        [TestMethod]
+        public void TestNumPairsWithKeyValue()
+        {
+            // arrange
+            var inputDictionary = new Dictionary<int, string>();
+            inputDictionary.Add(0, "hello");
+            inputDictionary.Add(1, "there");
+            inputDictionary.Add(2, "yo");
+            var minKeyValue = 0;
+            var valueLength = 10;
+            var expectedCount = 2;
+            // act
+            var TestResult = LINQ.Program.NumPairsWithKeyValue(inputDictionary, minKeyValue, valueLength);
+            // assert
+            Assert.AreEqual(expectedCount, TestResult);
+        }
     }
 }
