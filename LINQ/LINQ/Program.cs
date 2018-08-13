@@ -16,5 +16,11 @@ namespace LINQ
             var returnValue = numbers.Select(x => x + 1);
             return returnValue.ToList();
         }
+
+        public static int[] GetWhereDivisableBy(List<int> numbers, int divider)
+        {
+            var divisableNumbers = numbers.Where(x => x % divider == 0);
+            return divisableNumbers.ToArray();
+        }
     }
 }
