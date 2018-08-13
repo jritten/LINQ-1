@@ -85,5 +85,17 @@ namespace LINQTests
             // assert
             Assert.AreEqual(expectedCount, TestResult);
         }
+        [TestMethod]
+        public void TestGetDistinctWithValue()
+        {
+            // arrange
+            var inputList = new List<double> { 1, 2, 3 };
+            var minNum = 1;
+            var expectedOutput = new List<double> { 2, 3 };
+            // act
+            var TestResult = LINQ.Program.GetDistinctWithValue(inputList, minNum);
+            // assert
+            CollectionAssert.AreEqual(expectedOutput, TestResult);
+        }
     }
 }
