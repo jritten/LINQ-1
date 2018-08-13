@@ -18,5 +18,17 @@ namespace LINQTests
             // assert
             CollectionAssert.AreEqual(expectedResult, TestResult);
         }
+        [TestMethod]
+        public void TestGetWhereDivisableBy()
+        {
+            // arrange
+            var numList = new List<int> { 1, 2, 3, 4, 5 };
+            int dividerNumber = 2;
+            var expectedOutput = new int[2] { 2, 4 };
+            // act
+            var TestResult = LINQ.Program.GetWhereDivisableBy(numList, dividerNumber);
+            // assert
+            CollectionAssert.AreEqual(expectedOutput, TestResult);
+        }
     }
 }
