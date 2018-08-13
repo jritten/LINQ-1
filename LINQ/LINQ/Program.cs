@@ -44,6 +44,11 @@ namespace LINQ
         {
             var pairCount = dict.Where(el => el.Key > x && el.Value.Length < y).Count();
             return pairCount;
-        } 
+        }
+        public static List<double> GetDistinctWithValue(List<double> numbers, int x)
+        {
+            var uniqueValues = numbers.Where(num => num < x).Distinct();
+            return uniqueValues.ToList();
+        }
     }
 }
